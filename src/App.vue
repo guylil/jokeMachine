@@ -1,11 +1,25 @@
 <template>
-  <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-    </div>
-    <router-view/>
-  </div>
+  <v-app>
+    <v-app-bar app dark>
+      <div class="d-flex align-center">
+        <div>All the Chuck Norris jokes that you can wish for</div>
+      </div>
+      <v-spacer></v-spacer>
+        <router-link to="/">Home</router-link> |
+        <router-link to="/about">About</router-link>
+      <v-btn
+              href="https://github.com/vuetifyjs/vuetify/releases/latest"
+              target="_blank"
+              text
+      >
+        <v-icon>mdi-open-in-new</v-icon>
+      </v-btn>
+    </v-app-bar>
+
+    <v-content>
+      <router-view/>
+    </v-content>
+  </v-app>
 </template>
 
 <style lang="scss">

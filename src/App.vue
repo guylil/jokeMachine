@@ -37,6 +37,7 @@
     </v-app-bar>
 
     <v-content>
+      <JokesDisplay/>
       <HelloWorld/>
     </v-content>
   </v-app>
@@ -44,12 +45,14 @@
 
 <script>
 import HelloWorld from './components/HelloWorld';
+import JokesDisplay from "./components/JokesDisplay";
 
 export default {
   name: 'App',
 
   components: {
     HelloWorld,
+    JokesDisplay
   },
 
   data: () => ({

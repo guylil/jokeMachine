@@ -5,14 +5,11 @@
         <div>All the Chuck Norris jokes that you can wish for</div>
       </div>
       <v-spacer></v-spacer>
-      <router-link v-for="cat in categories" :key="cat.name" :to="cat.route">
-        |> {{ cat.text }} |
+      <div>Categories:</div>
+      <router-link v-for="category in categories" :key="category.name" :to="category.route">
+        <v-btn text>{{category.text}}</v-btn>
       </router-link>
-      <v-btn
-        href="https://github.com/vuetifyjs/vuetify/releases/latest"
-        target="_blank"
-        text
-      >
+      <v-btn href="https://github.com/guylil" target="_blank" text>
         <v-icon>mdi-open-in-new</v-icon>
       </v-btn>
     </v-app-bar>
@@ -28,14 +25,9 @@ export default {
   name: "App",
   data() {
     return {
-      categories: [
-        // {name: 'home', route: '/', text:'home', originApi:'/'},
-        // {name: 'About', route: '/about', text:'about', originApi:'/'},
-      ],
-      routes: []
+      categories: [],
     };
   },
-  beforeCreate() {},
   mounted() {
     this.getRoutes();
   },
@@ -45,35 +37,14 @@ export default {
               .then(response => response.json())
               .then(res => this.categories = ['all',...res.value].map(cat =>
                             {return { name: cat, route: `/category/${cat}`, text: cat }}))
-      // return {type: "success", value: ["explicit", "nerdy"]}
-      // this.routes = ["explicit", "nerdy"];
-      // this.categories = ["explicit", "nerdy", "all"].map(cat => {
-      //   return { name: cat, route: `/category/${cat}`, text: cat };
-      // });
     }
   },
 };
 </script>
 
 <style lang="scss">
-#app {
-  font-family: "Avenir", Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
+a {
+  text-decoration: none;
 }
 
-#nav {
-  padding: 30px;
-
-  a {
-    font-weight: bold;
-    color: #2c3e50;
-
-    &.router-link-exact-active {
-      color: #42b983;
-    }
-  }
-}
 </style>

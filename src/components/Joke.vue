@@ -1,27 +1,26 @@
 <template>
-  <v-container>
-    <v-layout text-center wrap>
-      <v-flex v-if="jokes.length" mb-4>
-        <h1 class="display-2 font-weight-bold mb-3">
-          Welcome to Jokes about {{ category }} stuff
-        </h1>
-        <v-select
+  <v-container fluid>
+    <v-row v-if="jokes.length">
+      <v-col sm-12 cols="12" md="4">
+        <div class="title mb-3">Category: {{ category }}</div>
+        <v-select outlined
           :items="selectionOptions"
           v-model="numberOfJokesToDisplay"
           label="Select how many jokes to display"
         />
-        <v-flex>
-          <div
-            v-html="joke.joke"
-            v-for="joke in jokes.slice(0, numberOfJokesToDisplay)"
-            :key="joke.id"
-          ></div>
-        </v-flex>
-      </v-flex>
-      <v-flex v-else
-        >There are no jokes about "{{ category }}" apparently</v-flex
-      >
-    </v-layout>
+      </v-col>
+      <v-spacer></v-spacer>
+      <v-col md="7">
+        <div
+          v-html="joke.joke"
+          v-for="joke in jokes.slice(0, numberOfJokesToDisplay)"
+          :key="joke.id"
+          :class="{'blue-grey lighten-1' : (1+jokes.indexOf(joke))%2}"
+          class="pa-1"
+        ></div>
+      </v-col>
+    </v-row>
+    <v-row v-else> There are no jokes about "{{ category }}" apparently </v-row>
   </v-container>
 </template>
 
@@ -33,7 +32,7 @@ export default {
     jokes: Array
   },
   data: () => ({
-    numberOfJokesToDisplay: 0,
+    numberOfJokesToDisplay: null,
     items: [...Array(10).keys()].map(x => ++x)
   }),
   computed: {

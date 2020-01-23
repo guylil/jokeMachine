@@ -1,19 +1,15 @@
 <template>
-  <v-container>
-    <v-layout text-center wrap>
-      <v-flex mb-4>
-        <h3 class="font-weight-bold mb-3">
-          Welcome to JokesDisplay.vue
-        </h3>
-      </v-flex>
-
-      <v-flex mb-5 xs12>
-<!--        <h2 class="headline font-weight-bold mb-3">What's next?</h2>-->
-                <v-layout justify-center>
-                  <Joke :category="$route.params.category" :jokes="jokes"/>
-                </v-layout>
-      </v-flex>
-    </v-layout>
+  <v-container fluid>
+    <v-row justify="center">
+        <h3 class="font-weight-bold mb-3">Welcome to Chuck Norris Jokes</h3>
+    </v-row>
+    <v-row xs-12 justify="center">
+      <v-col>
+        <v-layout>
+          <Joke :category="$route.params.category" :jokes="jokes"/>
+        </v-layout>
+      </v-col>
+    </v-row>
   </v-container>
 </template>
 

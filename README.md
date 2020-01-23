@@ -1,24 +1,30 @@
-# jokes
+# Chuck Norris Jokes
 
+## A Front-end to Chuck Norris Jokes Api
+You can see the Api @ http://www.icndb.com/
+   
 ## Project setup
 ```
+git clone
+cd into the project
 npm install
 ```
 
-### Compiles and hot-reloads for development
+### Serve for development
 ```
 npm run serve
 ```
 
-### Compiles and minifies for production
+## Have some laughs
 ```
-npm run build
+Open browser @ localhost:8080
+``` 
+
+### What the project contains
+```
+VueJs      created with vue cli 'vue create jokes'
+Vue Router added with cli 'vue add router'
+Vutify     added with cli 'vue add vuetify'
 ```
 
-### Lints and fixes files
-```
-npm run lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+## Have Fun :)

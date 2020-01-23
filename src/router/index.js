@@ -11,7 +11,7 @@ let routes = [
     name: "JokesDisplay",
     component: JokesDisplay
   },
-  { path: "*", name: "home", component: Home },
+  { path: "*", name: "404", component: Home },
 ];
 
 const router = new VueRouter({

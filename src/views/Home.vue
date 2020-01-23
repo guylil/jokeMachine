@@ -1,19 +1,18 @@
 <template>
-  <div class="home">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <div>
+    <Welcome msg="Welcome to Chuck Norris Jokes"/>
   </div>
 </template>
 
 <script>
-  /* eslint-disable vue/no-unused-components */
 
   // @ is an alias to /src
-import HelloWorld from '@/components/HelloWorld.vue'
+import Welcome from '@/components/Welcome.vue'
 
 export default {
   name: 'home',
   components: {
-    HelloWorld
+    Welcome
   }
 }
 </script>

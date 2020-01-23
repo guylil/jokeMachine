@@ -14,7 +14,6 @@
 </template>
 
 <script>
-  /* eslint-disable */
 
 import Joke from "../components/Joke";
 
@@ -35,7 +34,7 @@ export default {
       }
   },
   watch: {
-    $route(to, from) {
+    $route(to) {
       this.getJokesByCategory(to.params.category);
     }
   },
